@@ -4,75 +4,81 @@
 #include "multiplicar.h"
 #include "dividir.h"
 #include "espar.h"
+#include "menu.h"
 using namespace std;
-
-int menu(){
-        int opcion;
-        cout<<"Este es un menu selecciona una opción \n"
-        "1. Sumar 2 numeros \n"
-        "2. Restar 2 numeros \n"
-        "3. Multiplicar 2 numeros \n"
-        "4. Dividir 2 numeros \n"
-        "5. Comprobar si un numero es par \n"
-        "0. Salir\n"
-        "Selecciona una opción: ";
-    cin>>opcion;
-    return opcion;
-}
 
 int main (){
     int opcionm,a,b;
     
     while(true){
         opcionm = menu();
+        if(opcionm == 0){ //Esto si o si debe estar fuera del switch pues asi afecta directamente al while
+            break;
+        }
         switch (opcionm)
         {
-        case 0:
-            break;
         case 1:
-
-            cout<<"Digita el primer numero: ";
+            system("cls"); //limpiamos el menu en cada caso
+            cout<<"Suma: \n"
+            "Digita el primer numero: ";
             cin >>a;
             cout<<"\n";
             cout<<"Digita el segundo numero: ";
             cin >>b;
-            cout<<"\n";
-            cout<<"Este es el resultado"<<sumar(a,b)<<endl;
+            system("cls");
+            cout<<"Este es el resultado:\n"
+            "("<<a<<"+"<<b<<")\n"<<"="<<sumar(a,b)<<endl;
             break;
         
         case 2:
-            cout<<"Digita el primer numero: "<<opcionm<<endl;
+            system("cls");
+            cout<<"Resta:\n"
+            "Digita el primer numero: ";
             cin >>a;
             cout<<"\n";
             cout<<"Digita el segundo numero: ";
             cin >>b;
-            cout<<"\n";
-            cout<<"Este es el resultado: "<<restar(a,b)<<endl;
+            system("cls");
+            cout<<"Este es el resultado:\n"
+            "("<<a<<"-"<<b<<")\n"<<"="<<restar(a,b)<<endl;
+            break;
+        
         break;
         case 3:
+            system("cls");
+            cout<<"Multiplicación:\n";
             cout<<"Digita el primer numero: ";
             cin >>a;
             cout<<"\n";
             cout<<"Digita el segundo numero: ";
             cin >>b;
-            cout<<"\n";
-            cout<<"Este es el resultado: "<<multiplicar(a,b)<<endl;
-        break;
+            system("cls");
+            cout<<"Este es el resultado:\n"
+            "("<<a<<"x"<<b<<")\n"<<"="<<multiplicar(a,b)<<endl;
+            break;
         case 4:
+            system("cls");
+            cout<<"Division\n";
             cout<<"Digita el primer numero: ";
             cin >>a;
             cout<<"\n";
             cout<<"Digita el segundo numero: ";
             cin >>b;
-            cout<<"\n";
-            cout<<"Este es el resultado: "<<multiplicar(a,b)<<endl;
+            system("cls");
+            if(b!=0){
+                cout<<"Este es el resultado:\n"
+                "("<<a<<"/"<<b<<")\n"<<"="<<dividir(a,b)<<endl;
+            }
+            else{
+                cout<<"No es posible dividir con 0\n";
+            }
         break;
         case 5:
-            int esparn;
-            cout<<"Digita el numero: ";
+            system("cls");
+            cout<<"Verificar paridad:\n"
+            "Digita el numero: ";
             cin >>a;
-            cout<<"\n";
-
+            system("cls");
             if(espar(a)){
             cout<<"Es par\n";
             }
@@ -81,6 +87,10 @@ int main (){
             }
         break;
     default:
+        system("cls");
+        cout<<"Te confundiste opcion invalida (Hackeando tu pc)\n"
+        "100001101010101110101010101010101\n10101010101010110101001\n"
+        "Tienes otra oportunidad escoge la opcion correcta\n";
         break;
     }
     system("pause");
