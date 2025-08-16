@@ -38,11 +38,13 @@ int main (){
             cout<<"\n";
             cout<<"Digita el segundo numero: ";
             cin >>b;
+
             system("cls");
             cout<<"Este es el resultado:\n"
             "("<<a<<"-"<<b<<")\n"<<"="<<restar(a,b)<<endl;
             break;
         
+
         break;
         case 3:
             system("cls");
