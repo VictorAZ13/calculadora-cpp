@@ -5,6 +5,7 @@
 #include "dividir.h"
 #include "espar.h"
 #include "menu.h"
+#include "validarentero.h"
 using namespace std;
 
 int main (){
@@ -19,12 +20,10 @@ int main (){
         {
         case 1:
             system("cls"); //limpiamos el menu en cada caso
-            cout<<"Suma: \n"
-            "Digita el primer numero: ";
-            cin >>a;
+            cout<<"Suma: \n";
+            a = validarentero("Digita el primer numero: ");
             cout<<"\n";
-            cout<<"Digita el segundo numero: ";
-            cin >>b;
+            b= validarentero("Digita el segundo numero: ");
             system("cls");
             cout<<"Este es el resultado:\n"
             "("<<a<<"+"<<b<<")\n"<<"="<<sumar(a,b)<<endl;
@@ -32,13 +31,10 @@ int main (){
         
         case 2:
             system("cls");
-            cout<<"Resta:\n"
-            "Digita el primer numero: ";
-            cin >>a;
+            cout<<"Resta:\n";
+            a = validarentero("Digita el primer numero: ");
             cout<<"\n";
-            cout<<"Digita el segundo numero: ";
-            cin >>b;
-
+            b= validarentero("Digita el segundo numero: ");
             system("cls");
             cout<<"Este es el resultado:\n"
             "("<<a<<"-"<<b<<")\n"<<"="<<restar(a,b)<<endl;
@@ -49,11 +45,9 @@ int main (){
         case 3:
             system("cls");
             cout<<"Multiplicación:\n";
-            cout<<"Digita el primer numero: ";
-            cin >>a;
+            a = validarentero("Digita el primer numero: ");
             cout<<"\n";
-            cout<<"Digita el segundo numero: ";
-            cin >>b;
+            b= validarentero("Digita el segundo numero: ");
             system("cls");
             cout<<"Este es el resultado:\n"
             "("<<a<<"x"<<b<<")\n"<<"="<<multiplicar(a,b)<<endl;
@@ -61,11 +55,9 @@ int main (){
         case 4:
             system("cls");
             cout<<"Division\n";
-            cout<<"Digita el primer numero: ";
-            cin >>a;
+            a = validarentero("Digita el primer numero: ");
             cout<<"\n";
-            cout<<"Digita el segundo numero: ";
-            cin >>b;
+            b= validarentero("Digita el segundo numero: ");
             system("cls");
             if(b!=0){
                 cout<<"Este es el resultado:\n"
@@ -77,9 +69,8 @@ int main (){
         break;
         case 5:
             system("cls");
-            cout<<"Verificar paridad:\n"
-            "Digita el numero: ";
-            cin >>a;
+            cout<<"Verificar paridad:\n";
+            a = validarentero("Digita el numero: ");
             system("cls");
             if(espar(a)){
             cout<<"Es par\n";
